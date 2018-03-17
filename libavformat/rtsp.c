@@ -1567,7 +1567,8 @@ int ff_rtsp_make_setup_request(AVFormatContext *s, const char *host, int port,
         if (reply->transports[0].lower_transport != lower_transport) {
             av_log(s, AV_LOG_ERROR, "Nonmatching transport in server reply\n");
             err = AVERROR_INVALIDDATA;
-            goto fail;
+            //TODO:VARADA need to find out RCA for transports being less
+            //goto fail;
         }
 
         switch(reply->transports[0].lower_transport) {
